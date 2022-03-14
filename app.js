@@ -1,17 +1,21 @@
 const express = require("express");
+const app = express();
 const mysql = require("mysql");
 const dotenv = require('dotenv');
-const app = express();
+const path = require('path');
+const { allowedNodeEnvironmentFlags } = require("process");
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 
 
-dotenv.config({ path: './config.env' });
 
-const db = mysql.createConnection({
-  host: process.env.DATABASE_HOST,
-  user: process.env.DATABASE_USER,
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE
-});
+
+//define routes
+app.use('/', require('./routes/pages'));
+app.use('/auth', require('./routes/auth'));
+//to make sure that i can grab the data from any form
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 db.connect((error) => {
   if (error) {

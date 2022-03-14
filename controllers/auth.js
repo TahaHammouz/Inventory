@@ -15,6 +15,7 @@ exports.register = (req, res) => {
 
     const { name, email, password, passwordConfirm } = req.body;
 
+Register-User1
     db.query('SELECT email FROM users WHERE email = ?', [email], async (error, results) => {
         if(error) {
           console.log(error);
@@ -44,3 +45,4 @@ exports.register = (req, res) => {
     });
   
 }  
+
