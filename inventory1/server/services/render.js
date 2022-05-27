@@ -19,9 +19,8 @@ exports.add_user = (req, res) =>{
     res.render('add_user');
 }
 
-
 exports.find_user = (_req, res) => {
-    axios.get('http://localhost:3000/api/users')
+    axios.get('http://localhost:3000/api/users%27)
         .then(function(userdata){
             res.render('index', { users : userdata.data });
         })
@@ -29,8 +28,8 @@ exports.find_user = (_req, res) => {
             res.send(err);
         })
 
-    
-}
+
+
 
 exports.update_user = (req, res) =>{
     axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
@@ -40,4 +39,7 @@ exports.update_user = (req, res) =>{
         .catch(err =>{
             res.send(err);
         })
+=======
+
+
 }
