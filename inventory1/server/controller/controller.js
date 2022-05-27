@@ -1,3 +1,5 @@
+var Userdb = require('../model/model');
+
 exports.find = (req, res)=>{
 
     if(req.query.id){
