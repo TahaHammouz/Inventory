@@ -11,8 +11,6 @@ exports.homeRoutes = (_req, res) => {
         .catch(err =>{
             res.send(err);
         })
-
-    
 }
 
 exports.add_user = (req, res) =>{
@@ -29,8 +27,6 @@ exports.find_user = (_req, res) => {
         })
 
 
-
-
 exports.update_user = (req, res) =>{
     axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
         .then(function(userdata){
@@ -39,7 +35,7 @@ exports.update_user = (req, res) =>{
         .catch(err =>{
             res.send(err);
         })
-=======
+
 
 
 }
