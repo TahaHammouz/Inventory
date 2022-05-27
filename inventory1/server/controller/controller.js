@@ -47,3 +47,33 @@ exports.update = (req, res)=>{
             res.status(500).send({ message : "Error Update user information"})
         })
 }
+exports.create = (req,res)=>{
+
+    if(!req.body){
+        alert("Data Updated Successfully!");
+        res.status(400).send({ message : "Content can not be emtpy!"});
+
+        return;
+    }
+
+
+    const user = new Userdb({
+        name : req.body.name,
+        date : req.body.date,
+        quantity: req.body.quantity,
+        code : req.body.code
+    })
+
+
+    user
+        .save(user)
+        .then((_data) => {
+            res.redirect('/add-user');
+        })
+        .catch(err =>{
+            res.status(500).send({
+                message : err.message || "Some error occurred while creating a create operation"
+            });
+        });
+
+}
