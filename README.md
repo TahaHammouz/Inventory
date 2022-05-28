@@ -21,3 +21,9 @@ Inventory refers to all the items, goods, merchandise, and materials held by a b
 
 •Bootstrap - The world’s most popular front-end open source toolkit.
 
+•EJS: is a simple templating language which is used to generate HTML markup with plain JavaScript.
+
+
+
+https://user-images.githubusercontent.com/91549817/170825438-7c7e1a0f-e205-437d-9897-3a94869c394e.mp4
+
